@@ -84,4 +84,21 @@ elif sign=="/":
 else:
     print("输入运算符错误！")
 
+for i in range(1,10):
+    for j in range(i,10):
+        print("%s*%s=%2s"%(j,i,i*j),end="\t")
+    print()
 
+for i in range(1,6):
+    for j in range(5-i):
+        print(" ",end="")
+    for j in range(2*i-1):
+        print("*",end="")
+    print()
+for i in range(1,6):
+    for j in range(i-1):
+        print(" ",end="")
+    for j in range(11-2*i):
+        print("*",end="")
+
+    print()
