@@ -1,0 +1,17 @@
+a=float(input("请输入一个数"))
+b=float(input("请输入一个数"))
+
+sign=input("请输入一个运算符")
+if sign=="+":
+    print("结果为",a+b)
+elif sign=="-":
+    print("结果为",a-b)
+elif sign=="*":
+    print("结果为",a*b)
+elif sign=="/":
+    if b!=0:
+        print("结果为",a/b)
+    else:
+        print("除数为零！")
+else:
+    print("输入运算符错误！")
