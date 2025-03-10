@@ -1,19 +1,22 @@
+
+
 class restaurant:
     def __init__(self,name,type):
         self.name=name
         self.type=type
+        self.number_served=0
     def open_restaurant(self):
         print(f"{self.name}正在营业")
     def describe_resturant(self):
         print(f"{self.name}餐馆是做{self.type}菜的餐馆")
         print(f"建议大家都来吃这家餐馆")
-ndre=restaurant('ning','thai')
-dang=restaurant('xiaogou','tomato')
-print(ndre.name)
+    def read_restaurant(self):
+        print(f"就餐人数为{self.number_served}")
+    def set_number_served(self,num):
+        self.number_served=num
 
-ndre.describe_resturant()
-ndre.open_restaurant()
-dang.describe_resturant()
+    def increment_number_served(self,add):
+        self.number_served+=add
 
 class User:
     def __init__(self,first_name,last_name):
@@ -21,8 +24,6 @@ class User:
         self.last_name=last_name
     def describe_user(self):
         print(f"用户的全名是{self.first_name} {self.last_name}")
-ning=User('ning','haixu')
-ning.describe_user()
 
 class car:
     def __init__(self,make,model,year):
@@ -30,6 +31,10 @@ class car:
         self.model=model
         self.year=year
         self.odometer=0
+    def get_descriptive_name(self):
+        long_name=f'{self.make} {self.model} {self.year}'
+        return long_name
+
     def read_odometer(self):
         print(f'这辆车已经{self.odometer}米了')
     def update_odometer(self,mileage):
@@ -40,12 +45,14 @@ class car:
             print('别乱调表！')
     def increase(self,mile):
         self.odometer+=mile
-wodeche=car('benchi','e300',2020)
-wodeche.odometer=100
-wodeche.read_odometer()
-wodeche.increase(10)
-wodeche.read_odometer()
-wodeche.update_odometer(200)
-wodeche.increase(20)
-wodeche.read_odometer()
+
+class elcar(car):
+    def __init__(self,make,model,year):
+        super().__init__(make,model,year)
+        self.battery_size=75
+    def describe_battery(self):
+        print(f"这辆车有{self.battery_size}kwh的大电池")
+    def update_battery(self,battery):
+        self.battery_size=battery
+
 
